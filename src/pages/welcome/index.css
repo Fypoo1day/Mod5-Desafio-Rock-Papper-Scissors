@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-image: url("../../images/background.jpg");
+}
+
+.container {
+  display: flex;
+  margin-top: 10vh;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px;
+}
+
+.input-cont {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  gap: 20px;
+}
+
+.button-container {
+  height: 87px;
+  margin-top: 70px;
+}
