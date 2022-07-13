@@ -1,8 +1,8 @@
-const papel = require("url:../../../src/assets/papper-hand.png");
+const tijera = require("url:../../../src/assets/scissors-hand.png");
 
 customElements.define(
-  "hand-paper",
-  class Papel extends HTMLElement {
+  "hand-scissor",
+  class Tijera extends HTMLElement {
     shadow: ShadowRoot;
     constructor() {
       super();
@@ -12,7 +12,7 @@ customElements.define(
     render() {
       const style = document.createElement("style");
       this.shadow.innerHTML = `
-        <img class="hand-paper" src="${papel}">
+        <img class="hand-scissor" src="${tijera}">
         `;
 
       style.innerHTML = `
