@@ -1,44 +1,35 @@
-export function initButton() {
-  class ButtonElement extends HTMLElement {
+customElements.define(
+  "button-comp",
+  class Button extends HTMLElement {
+    shadow: ShadowRoot;
     constructor() {
       super();
-    }
-    connectedCallBack() {
+      this.shadow = this.attachShadow({ mode: "open" });
       this.render();
     }
     render() {
-      const content = this.textContent;
+      const button = document.createElement("button");
       const style = document.createElement("style");
-      style.textContent = `
-            *{
-                box-sizing: border-box;
-            }
-            
-            .button {
-                width:100%;
-                color:#D8FCFC;
-                background-color: #006CFC;
-                border:10px solid #001997;
-                font-size:45px;
-                font-family:"Odibee Sans";
-                border-radius: 10px;
-                cursor: pointer;
-                
-            }
-            .button:hover {
-                background-color: #2f44ad;
-              }
-            `;
+      button.className = "button-el";
 
-      const shadow = this.attachShadow({ mode: "open" });
-      shadow.appendChild(style);
+      style.innerHTML = `
+                .button-el {
+                    color: #fff;
+                    width: 322px;
+                    height: 87px;
+                    font-size: 45px;
+                    text-align: center;
+                    border-radius: 10px;
+                    background: #006CFC;
+                    box-sizing: border-box;
+                    border: 10px solid #001997;
+                    font-family: var(--font-button);
+                }
+                `;
 
-      const div = document.createElement("button");
-      div.classList.add("button");
-      div.innerText = content;
-
-      shadow.appendChild(div);
+      button.textContent = this.textContent;
+      this.shadow.appendChild(button);
+      this.shadow.appendChild(style);
     }
   }
-  customElements.define("component-button", ButtonElement);
-}
+);

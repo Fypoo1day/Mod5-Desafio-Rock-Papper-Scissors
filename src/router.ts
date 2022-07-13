@@ -1,52 +1,37 @@
-import { initWelcomePage } from "./pages/welcome/index";
-
-const BASE_PATH = "/desafio5";
-
-function isGithubPages() {
-  return location.host.includes("github.io");
-}
+import { initWelcome } from "./pages/welcome/index";
 
 const routes = [
   {
-    path: /\/inicio/,
-    handler: initWelcomePage,
+    path: /\/welcome/,
+    component: initWelcome,
   },
 ];
 
-export function initRouter(container) {
+export function initRouter(container: Element) {
   function goTo(path) {
-    const completePath = isGithubPages() ? BASE_PATH + path : path;
-    history.pushState({}, "", completePath);
-    handleRoute(completePath);
+    history.pushState({}, "", path);
+    handleRoute(path);
   }
 
   function handleRoute(route) {
-    console.log("El handleRoute recibió una nueva ruta", route);
-    const newRoute = isGithubPages() ? route.replace(BASE_PATH, "") : route;
-
-    console.log(newRoute);
+    console.log("el handleRoute route recibió una nueva ruta ", route);
 
     for (const r of routes) {
-      if (r.path.test(newRoute)) {
-        const el = r.handler({ goTo: goTo });
+      if (r.path.test(route)) {
+        const el = r.component({ goTo: goTo });
 
         if (container.firstChild) {
           container.firstChild.remove();
         }
-        console.log(el);
         container.appendChild(el);
       }
     }
   }
-
-  if (location.host.includes("github.io")) {
-    goTo("/inicio");
-  } else if (location.pathname == "/") {
-    goTo("/inicio");
+  if (location.pathname == "/") {
+    goTo("/welcome");
   } else {
     handleRoute(location.pathname);
   }
-
   window.onpopstate = function () {
     handleRoute(location.pathname);
   };
