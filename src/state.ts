@@ -68,7 +68,7 @@ const state = {
     this.savedData();
   },
 
-  whoWins(myPlay: Jugada, computerPlay: Jugada) {
+  whoWins() {
     const currentState = this.getState();
     const jugada = currentState.currentGame;
 

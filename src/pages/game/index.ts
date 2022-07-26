@@ -162,7 +162,7 @@ export function initGame(params) {
       }
 
       setTimeout(() => {
-        params.goTo("/desafio-modulo-5/results");
+        params.goTo("/rock-papper-scissors/results");
       }, 1500);
     }, 1500);
   }
