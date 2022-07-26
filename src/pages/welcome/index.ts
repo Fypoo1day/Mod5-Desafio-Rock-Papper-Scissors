@@ -1,21 +1,21 @@
-const imgTitle = require("url:../../../src/assets/Piedra-Papel-Tijera.png");
+const imgTitle = require("url:../../../src/assets/Piedra-Papel-Tijera.svg");
 
 export function initWelcome(params) {
   const div = document.createElement("div");
-  div.className = "page-welcome";
+  div.classList.add("page");
   const style = document.createElement("style");
   div.innerHTML = `
         <img class="pt-img" src="${imgTitle}" alt="">
-        <button-comp class="btn-comp">Empezar</button-comp>
-            <div class="hands">
-                <hand-scissor></hand-scissors>
-                <hand-rock></hand-rock>
-                <hand-paper></hand-paper>
-            </div>
+            <button-comp class="btn-comp">Empezar</button-comp>
+                <div class="hands">
+                    <hand-rock></hand-rock>
+                    <hand-paper></hand-paper>
+                    <hand-scissor></hand-scissor>
+                </div>
     `;
 
   style.innerHTML = `
-        .page-welcome{
+        .page{
             width: 100%;
 		    height: 100vh;
 		    padding-top: 100px;

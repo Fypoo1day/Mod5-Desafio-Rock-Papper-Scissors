@@ -1,9 +1,19 @@
+import { initGame } from "./pages/game";
+import { initRules } from "./pages/rules";
 import { initWelcome } from "./pages/welcome/index";
 
 const routes = [
   {
     path: /\/welcome/,
     component: initWelcome,
+  },
+  {
+    path: /\/rules/,
+    component: initRules,
+  },
+  {
+    path: /\/game/,
+    component: initGame,
   },
 ];
 
