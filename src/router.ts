@@ -30,6 +30,8 @@ const routes = [
 
 export function initRouter(container: Element) {
   function goTo(path) {
+    console.log(isGithubPages());
+
     const completePath = isGithubPages() ? BASE_PATH + path : path;
     console.log(completePath);
 
@@ -41,6 +43,8 @@ export function initRouter(container: Element) {
     console.log("el handleRoute route recibió una nueva ruta ", route);
 
     const newRoute = isGithubPages() ? route.replace(BASE_PATH, "") : route;
+
+    console.log(newRoute);
 
     for (const r of routes) {
       if (r.path.test(newRoute)) {
