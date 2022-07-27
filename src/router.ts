@@ -3,6 +3,8 @@ import { initResults } from "./pages/results";
 import { initRules } from "./pages/rules";
 import { initWelcome } from "./pages/welcome/index";
 
+const BASE_PATH = "/Mod5-Desafio-Rock-Papper-Scissors";
+
 const routes = [
   {
     path: /\/welcome/,
@@ -50,4 +52,10 @@ export function initRouter(container: Element) {
   window.onpopstate = function () {
     handleRoute(location.pathname);
   };
+
+  if (location.pathname == "/Mod5-Desafio-Rock-Papper-Scissors/") {
+    goTo("/welcome");
+  } else {
+    handleRoute(location.pathname);
+  }
 }
