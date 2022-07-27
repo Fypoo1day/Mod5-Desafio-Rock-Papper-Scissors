@@ -1,7 +1,7 @@
 import { initGame } from "./pages/game";
 import { initResults } from "./pages/results";
 import { initRules } from "./pages/rules";
-import { initWelcome } from "./pages/welcome/index";
+import { initWelcome } from "./pages/welcome";
 
 const BASE_PATH = "/Mod5-Desafio-Rock-Papper-Scissors";
 
