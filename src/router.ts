@@ -5,6 +5,10 @@ import { initWelcome } from "./pages/welcome/index";
 
 const BASE_PATH = "/Mod5-Desafio-Rock-Papper-Scissors";
 
+function isGithubPages() {
+  return location.host.includes("github.io");
+}
+
 const routes = [
   {
     path: /\/welcome/,
@@ -26,8 +30,9 @@ const routes = [
 
 export function initRouter(container: Element) {
   function goTo(path) {
-    history.pushState({}, "", path);
-    handleRoute(path);
+    const completePath = isGithubPages() ? BASE_PATH + path : path;
+    history.pushState({}, "", completePath);
+    handleRoute(completePath);
   }
 
   function handleRoute(route) {
@@ -58,4 +63,7 @@ export function initRouter(container: Element) {
   } else {
     handleRoute(location.pathname);
   }
+  window.onpopstate = function () {
+    handleRoute(location.pathname);
+  };
 }
