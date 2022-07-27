@@ -6,6 +6,7 @@ import { initWelcome } from "./pages/welcome";
 const BASE_PATH = "/Mod5-Desafio-Rock-Papper-Scissors/";
 
 function isGithubPages() {
+  console.log(location.host.includes("github.io"));
   return location.host.includes("github.io");
 }
 
@@ -44,7 +45,7 @@ export function initRouter(container: Element) {
 
     const newRoute = isGithubPages() ? route.replace(BASE_PATH, "") : route;
 
-    console.log(newRoute);
+    // console.log(newRoute);
 
     for (const r of routes) {
       if (r.path.test(newRoute)) {
@@ -57,11 +58,14 @@ export function initRouter(container: Element) {
       }
     }
   }
+  console.log(location.pathname);
+
   if (location.pathname == "/") {
     goTo("/welcome");
   } else {
     handleRoute(location.pathname);
   }
+
   window.onpopstate = function () {
     handleRoute(location.pathname);
   };
