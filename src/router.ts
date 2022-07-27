@@ -3,7 +3,7 @@ import { initResults } from "./pages/results";
 import { initRules } from "./pages/rules";
 import { initWelcome } from "./pages/welcome";
 
-const BASE_PATH = "/Mod5-Desafio-Rock-Papper-Scissors/";
+const BASE_PATH = "/Mod5-Desafio-Rock-Papper-Scissors";
 
 function isGithubPages() {
   console.log(location.host.includes("github.io"));
