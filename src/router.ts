@@ -3,7 +3,7 @@ import { initResults } from "./pages/results";
 import { initRules } from "./pages/rules";
 import { initWelcome } from "./pages/welcome";
 
-const BASE_PATH = "/Mod5-Desafio-Rock-Papper-Scissors";
+const BASE_PATH = "/Mod5-Desafio-Rock-Papper-Scissors/";
 
 function isGithubPages() {
   return location.host.includes("github.io");
@@ -31,6 +31,8 @@ const routes = [
 export function initRouter(container: Element) {
   function goTo(path) {
     const completePath = isGithubPages() ? BASE_PATH + path : path;
+    console.log(completePath);
+
     history.pushState({}, "", completePath);
     handleRoute(completePath);
   }
@@ -60,11 +62,12 @@ export function initRouter(container: Element) {
     handleRoute(location.pathname);
   };
 
-  if (location.pathname == "/Mod5-Desafio-Rock-Papper-Scissors/") {
+  if (location.pathname == "/Mod5-Desafio-Rock-Papper-Scissors") {
     goTo("/welcome");
   } else {
     handleRoute(location.pathname);
   }
+
   window.onpopstate = function () {
     handleRoute(location.pathname);
   };
