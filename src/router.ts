@@ -6,8 +6,7 @@ import { initWelcome } from "./pages/welcome";
 const BASE_PATH = "/Mod5-Desafio-Rock-Papper-Scissors";
 
 function isGithubPages() {
-  console.log(location.host.includes("github.io"));
-  return location.host.includes("github.io");
+  return location.host.includes("fypoo1day.github.io");
 }
 
 const routes = [
@@ -31,21 +30,17 @@ const routes = [
 
 export function initRouter(container: Element) {
   function goTo(path) {
-    console.log(isGithubPages());
-
+    // Comprueba si esta siendo usado desde github o local y lo guarda
     const completePath = isGithubPages() ? BASE_PATH + path : path;
-    console.log(completePath);
 
     history.pushState({}, "", completePath);
     handleRoute(completePath);
   }
 
+  //Devuelve el componente segun la URL
   function handleRoute(route) {
-    console.log("el handleRoute  ", route);
-
+    // Convierte el path para que se ejecute con el REGEX ( segun sea, github o local)
     const newRoute = isGithubPages() ? route.replace(BASE_PATH, "") : route;
-
-    // console.log(newRoute);
 
     for (const r of routes) {
       if (r.path.test(newRoute)) {
@@ -58,19 +53,11 @@ export function initRouter(container: Element) {
       }
     }
   }
-  console.log(location.pathname);
 
-  if (location.pathname == "/") {
-    goTo("/welcome");
-  } else {
-    handleRoute(location.pathname);
-  }
-
-  window.onpopstate = function () {
-    handleRoute(location.pathname);
-  };
-
-  if (location.pathname == "/Mod5-Desafio-Rock-Papper-Scissors") {
+  if (
+    location.pathname == "/" ||
+    location.pathname == "/Mod5-Desafio-Rock-Papper-Scissors/"
+  ) {
     goTo("/welcome");
   } else {
     handleRoute(location.pathname);
