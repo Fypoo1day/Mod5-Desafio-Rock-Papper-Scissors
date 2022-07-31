@@ -1,6 +1,7 @@
 https://fypoo1day.github.io/Mod5-Desafio-Rock-Papper-Scissors/
 
-Para crear esta aplicación se utilizaron los siguientes elementos:
+El objetivo de este proyecto fue aplicar en una webapp lo aprendido sobre:
+
 -Router
 
 -State
