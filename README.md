@@ -18,19 +18,19 @@ Siga estos pasos para instalar y ejecutar un entorno de desarrollo:
 
 > git clone git@github.com:Fypoo1day/Mod5-Desafio-Rock-Papper-Scissors.git
 
-Instalación de Yarn:
+- Instalación de Yarn:
 
 > npm install --global yarn
 
 Documentación: https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
 
-Instalación de Parcel:
+- Instalación de Parcel:
 
 > yarn add -D parcel@next
 
 Documentación: https://parceljs.org/getting-started/webapp/
 
-Ejecución:
+- Ejecución:
 
 > yarn dev
 
