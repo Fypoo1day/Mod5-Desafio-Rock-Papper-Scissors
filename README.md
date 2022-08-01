@@ -34,10 +34,10 @@ Documentación: https://parceljs.org/getting-started/webapp/
 
 > yarn dev
 
-Build:
+- Build:
 
 > yarn build
 
-Depoloy
+- Deploy
 
 > yarn deploy
