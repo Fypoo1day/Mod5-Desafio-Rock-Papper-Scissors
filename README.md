@@ -16,7 +16,7 @@ Siga estos pasos para instalar y ejecutar un entorno de desarrollo:
 
 - Clonar repositorio:
 
-> git clone git@github.com:Fypoo1day/Mod5-Desafio-Rock-Papper-Scissors.git
+> git clone https://github.com/Fypoo1day/Mod5-Desafio-Rock-Papper-Scissors.git
 
 - Instalación de Yarn:
 
