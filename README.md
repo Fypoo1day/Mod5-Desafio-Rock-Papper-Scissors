@@ -1,6 +1,6 @@
-https://fypoo1day.github.io/Mod5-Desafio-Rock-Papper-Scissors/
+Webapp: https://fypoo1day.github.io/Mod5-Desafio-Rock-Papper-Scissors/
 
-El objetivo de este proyecto fue aplicar en una webapp lo aprendido sobre:
+El objetivo de este proyecto basado en el clásico juego de "Piedra, Papel o Tijeras" fue aplicar en una webapp lo aprendido sobre:
 
 -Router
 
@@ -12,16 +12,32 @@ El objetivo de este proyecto fue aplicar en una webapp lo aprendido sobre:
 
 ---
 
-Configuración del proyecto:
+Siga estos pasos para instalar y ejecutar un entorno de desarrollo:
 
-Yarn:
+- Clonar repositorio:
 
-> yarn init -y
+> git clone git@github.com:Fypoo1day/Mod5-Desafio-Rock-Papper-Scissors.git
 
-Parcel:
+Instalación de Yarn:
+
+> npm install --global yarn
+
+Documentación: https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
+
+Instalación de Parcel:
 
 > yarn add -D parcel@next
+
+Documentación: https://parceljs.org/getting-started/webapp/
 
 Ejecución:
 
 > yarn dev
+
+Build:
+
+> yarn build
+
+Depoloy
+
+> yarn deploy
